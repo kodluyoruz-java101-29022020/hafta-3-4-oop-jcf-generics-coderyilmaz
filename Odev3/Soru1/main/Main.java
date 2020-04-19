@@ -20,10 +20,9 @@ public class Main {
 	private static ReadFromKeyboard readFromKeyboard = new ReadFromKeyboard();
 	
 	public static void main(String[] args) throws InvalidAuthenticationException {
-
+		
 		
 		Account account = readFromKeyboard.logIn();
-		
 		
 		while(account != null) {
 			showMainMenu();

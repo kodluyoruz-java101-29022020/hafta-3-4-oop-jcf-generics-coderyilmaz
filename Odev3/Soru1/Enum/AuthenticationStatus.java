@@ -3,7 +3,7 @@ package Enum;
 public enum AuthenticationStatus {
 	
 	SUCCESS(true,"Online"),
-	FAIL(false,"Wrong Info!");
+	FAIL(false,"Offline");
 	
 	private boolean code;
 	private String status;

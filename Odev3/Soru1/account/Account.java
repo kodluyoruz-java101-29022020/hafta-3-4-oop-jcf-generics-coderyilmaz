@@ -52,6 +52,7 @@ public abstract class Account implements Comparable<Account> {
 		if(account.getUser() != null) {
 			if(account.getUser().getEmail().equals(email) && account.getUser().getPassword().equals(password)) {
 				authenticationStatus = AuthenticationStatus.SUCCESS;
+				System.out.println(authenticationStatus.getStatus());
 			}else {
 				authenticationStatus = AuthenticationStatus.FAIL;
 			}
