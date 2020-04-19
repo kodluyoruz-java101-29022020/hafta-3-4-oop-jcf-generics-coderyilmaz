@@ -20,8 +20,7 @@ public class Main {
 	private static ReadFromKeyboard readFromKeyboard = new ReadFromKeyboard();
 	
 	public static void main(String[] args) throws InvalidAuthenticationException {
-//		AccountManager accountManager = new AccountManager();
-//		System.out.println(accountManager.getAccounts());
+
 		
 		Account account = readFromKeyboard.logIn();
 		
