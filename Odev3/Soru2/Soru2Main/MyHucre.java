@@ -8,9 +8,7 @@ public class MyHucre {
 	private MyHucre solHucre;
 	
 	public MyHucre(int veri) {
-		this.sagHucre = null;
 		this.veri = veri;
-		this.solHucre = null;
 	}
 	
 	public int getVeri() {

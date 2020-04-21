@@ -3,42 +3,75 @@ package Soru2Main;
 public class MyList {
 	
 	private MyHucre ilk;
+	private MyHucre son;
 	
 	public MyList() {
 		this.ilk = null;
+		this.son = null;
 	}
 	
-	public void add(int veri) {
-		
-		MyHucre hucre = new MyHucre(veri);
-		
-		if(this.ilk == null) {
-			this.ilk = hucre;
-		}else {
-			this.ilk.setSagHucre(hucre);
-		}
-		
-		hucre = this.ilk;
-	}
+	public void add(int veri) {  
+
+		MyHucre hucre = new MyHucre(veri);  
+  
+        if(ilk == null) {  
+        	
+            ilk = hucre;
+            son = hucre;
+
+            ilk.setSolHucre(null);  
+
+            son.setSagHucre(null); 
+        }  
+        else {  
+
+        	son.setSagHucre(hucre);  
+
+        	hucre.setSolHucre(son);  
+
+        	son = hucre;
+        	
+        	son.setSagHucre(null);
+        }  
+    }  
+	
 	
 	public int length() {
+		MyHucre hucre = ilk;
 		
-		if(this.ilk == null) {
-			return 0;
-		}
 		int length = 0;
 		
-		while(this.ilk != null) {
+		if(ilk == null) {
+			return 0;
+		}
+		
+		while(hucre != null) {  
 			length++;
-			this.ilk = this.ilk.getSagHucre();
+			hucre = hucre.getSagHucre();
 		}
 		return length;
 	}
-
-	@Override
-	public String toString() {
-		return "MyList [ilk=" + ilk + "]";
-	}
 	
+	public String toString() {  
+
+		MyHucre hucre = ilk;  
+        
+		if(ilk == null) {  
+            return "Liste Bos !";  
+        }  
+        
+        StringBuilder builder = new StringBuilder();
+        builder.append("List = [ ");
+		
+        while(hucre != null) {  
+			builder.append(hucre.getVeri());
+			builder.append(" ");
+            hucre = hucre.getSagHucre();
+        }  
+		
+		builder.append("]");
+
+		return builder.toString();
+    } 
 	
 }
